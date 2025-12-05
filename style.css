@@ -1,0 +1,87 @@
+/* ---------- Body and Background ---------- */
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to bottom, #87ceeb, #ffffff);
+  color: #fff;
+  user-select: none;
+}
+
+/* ---------- Score Counter ---------- */
+#counter {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  padding: 15px 25px;
+  border-radius: 15px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #ffd700;
+  text-shadow: 2px 2px 5px black;
+  z-index: 10;
+}
+
+/* ---------- End Game Popup ---------- */
+#end {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(30, 30, 30, 0.9);
+  border-radius: 20px;
+  padding: 40px 60px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  visibility: hidden;
+  z-index: 20;
+  box-shadow: 0 0 30px rgba(0,0,0,0.7);
+}
+
+#end h1 {
+  font-size: 40px;
+  color: #ff4d4d;
+  margin: 0;
+  text-shadow: 2px 2px 5px black;
+}
+
+#end #finalScore {
+  font-size: 36px;
+  color: #ffd700;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px black;
+}
+
+/* ---------- Retry Button ---------- */
+#retry {
+  padding: 15px 30px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #ffffff;
+  background: #ff4d4d;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+  text-shadow: 1px 1px 3px black;
+}
+
+#retry:hover {
+  background: #ff1a1a;
+  transform: scale(1.1);
+}
+
+/* ---------- Make Canvas Fullscreen ---------- */
+canvas {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+

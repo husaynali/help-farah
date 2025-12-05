@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <title>Help Farah</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Score Counter -->
+  <div id="counter">0</div>
+
+  <!-- End Game Popup -->
+  <div id="end">
+    <div id="endText">Game Over<br>Score: <span id="finalScore">0</span></div>
+    <button id="retry">Retry</button>
+  </div>
+
+  <!-- Three.js Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/99/three.min.js"></script>
+
+  <!-- Game Logic -->
+  <script src="script.js"></script>
+
+  <!-- Mobile Swipe Controls -->
+  <script>
+    let touchStartX = 0, touchStartY = 0;
+
+    window.addEventListener("touchstart", (e) => {
+      const touch = e.touches[0];
+      touchStartX = touch.clientX;
+      touchStartY = touch.clientY;
+    });
+
+    window.addEventListener("touchend", (e) => {
+      const touch = e.changedTouches[0];
+      const dx = touch.clientX - touchStartX;
+      const dy = touch.clientY - touchStartY;
+
+      if (Math.max(Math.abs(dx), Math.abs(dy)) < 30) return;
+
+      if (Math.abs(dx) > Math.abs(dy)) {
+        dx > 0 ? move("right") : move("left");
+      } else {
+        dy > 0 ? move("backward") : move("forward");
+      }
+    });
+  </script>
+</body>
+</html>
+
